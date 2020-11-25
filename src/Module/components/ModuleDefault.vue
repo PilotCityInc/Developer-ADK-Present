@@ -42,20 +42,65 @@
       stream
     />
     <div class="module-edit__container">
-      <v-text-field
-        label="Enter Final Presentation Video Link"
-        outlined
-        append-icon="mdi-check-bold"
-        prepend-inner-icon="mdi-youtube"
-      ></v-text-field>
-      <div class="module-default__youtube"></div>
-      <v-text-field
+      <div class="module-default__row">
+        <v-text-field
+          label="Final Presentation Video"
+          outlined
+          placeholder="Enter YouTube video link"
+          prepend-inner-icon="mdi-youtube"
+        ></v-text-field
+        ><v-btn class="module-default__youtube-verify-button ml-3" x-large outlined depressed
+          >Verify Link</v-btn
+        >
+      </div>
+      <v-chip-group column multiple class="module-default__youtube-data mb-8">
+        <v-chip class="mr-2" dark small label color="green">
+          <v-icon small left>mdi-check-bold</v-icon>
+          Verified YouTube Video
+        </v-chip>
+        <v-chip color="red" dark class="mr-2" small label>
+          <v-icon small left>mdi-close-thick</v-icon>
+          Replace with YouTube Video
+        </v-chip>
+        <v-chip class="mr-2" dark small label color="green">
+          <v-icon small left>mdi-check-bold</v-icon>
+          Verified Video Length
+        </v-chip>
+        <v-chip color="red" dark class="mr-2" small label>
+          <v-icon small left>mdi-close-thick</v-icon>
+          Video Length Exceeds Maximum
+        </v-chip>
+
+        <v-chip class="mr-2" dark small label color="green">
+          <v-icon small left>mdi-check-bold</v-icon>
+          Video is Public or Unlisted
+        </v-chip>
+        <v-chip color="red" dark class="mr-2" small label>
+          <v-icon small left>mdi-close-thick</v-icon>
+          Make Video Public or Unlisted
+        </v-chip>
+      </v-chip-group>
+      <div>
+        <v-btn outlined color="grey darken-1" class="mb-6" depressed x-small label>
+          <!-- <v-icon left>mdi-check</v-icon> -->
+          Hand-in-Hand Final Presentation Video
+          <v-icon x-small right>mdi-open-in-new</v-icon>
+        </v-btn>
+      </div>
+      <!-- <div class="module-default__youtube"></div> -->
+      <iframe
+        class="module-default__youtube"
+        :src="`https://www.youtube.com/embed/df0ZmKkzuWY`"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <!-- <v-text-field
         disabled
         placeholder="3:25"
         outlined
         append-icon="mdi-close-circle"
-      ></v-text-field>
-
+      ></v-text-field> -->
       <!-- ENTER CONTENT HERE -->
       <!-- DESIGN YOUR ACTIVITY HERE / COMMENT OUT WHEN YOU'VE STARTED DESIGNING -->
       <!-- <div class="module-default__none">Design your activity here</div> -->
@@ -89,14 +134,6 @@ export default {
 
 <style lang="scss">
 .module-default {
-<<<<<<< HEAD
-  &__youtube {
-    height: 400px;
-    width: 100%;
-    border-radius: 25px;
-    background-color: #dedede;
-  }
-=======
   &__none {
     border-radius: 5px;
     // border: 1px solid #dedede;
@@ -109,7 +146,36 @@ export default {
     padding-top: 35px;
   }
 
->>>>>>> upstream/master
+  &__row {
+    display: flex;
+  }
+
+  &__youtube {
+    width: 100%;
+    height: 330px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    // border: 2px solid #dedede;
+    // margin: 0px;
+    // background-color: #dedede;
+
+    // text-align: center;
+    // justify-content: center;
+    // align-items: center;
+    // padding-top: auto;
+    // padding-bottom: auto;
+  }
+
+  &__youtube-data {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__youtube-verify-button {
+    min-height: 56px;
+  }
+
   &__collapse-divider {
     margin-top: 15px;
     margin-bottom: 75px;
@@ -148,19 +214,6 @@ export default {
     text-align: center;
     max-width: 95%;
     margin: auto;
-  }
-  &__youtube {
-    height: 400px;
-    width: 95%;
-    border-radius: 25px;
-    // margin: 0px;
-    background-color: #dedede;
-
-    // text-align: center;
-    // justify-content: center;
-    // align-items: center;
-    // padding-top: auto;
-    // padding-bottom: auto;
   }
   &__about {
     font-size: 15px;
